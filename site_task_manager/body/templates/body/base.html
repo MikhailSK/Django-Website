@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap-theme.min.css">
+    <meta charset="utf-8"/>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #240935;">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/">
+        <img src="/media/icon.png" width="30" height="30" alt="">
+    </a>
+
+    <a class="navbar-brand" href="http://127.0.0.1:8000/">TackManager</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            {% block navbar %}
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/home/">Home<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/tasks">Tasks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/settings">Settings</a>
+                </li>
+            {% endblock %}
+        </ul>
+    </div>
+    <form class="form-inline">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-info" onclick="location.href = 'http://127.0.0.1:8000/sing_in/'"> Sing
+                In
+            </button>
+            <button type="button" class="btn btn-outline-success"
+                    onclick="location.href = 'http://127.0.0.1:8000/sing_up/'">Sing Up
+            </button>
+        </div>
+    </form>
+</nav>
+
+<div></div>
+{% block content %}
+
+{% endblock %}
+<div></div>
+</body>
+</html>

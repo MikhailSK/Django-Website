@@ -1,0 +1,27 @@
+{% extends 'body/base.html' %}
+
+{% block title %}
+    Welcome to Task Manager
+{% endblock %}
+
+{% block content %}
+    <div align="center">
+        <h1>Welcome</h1>
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+	        <div class="card-header">{{ header }}</div>
+	            <div class="card-body">
+	                <h5 class="card-title">{{ title }} qestion</h5>
+	                <p class="card-text">{{ message }}</p>
+                </div>
+        </div>
+        	{% if latest_question_list %}
+	    		<ul>
+    				{% for question in latest_question_list %}
+    	    			<li><a href="/qestions/{{ question.id }}/">{{ question.question_text }}</a></li>
+	   		 		{% endfor %}
+	    		</ul>
+			{% else %}
+	    		<p>No polls are available.</p>
+			{% endif %}
+    	</div>
+{% endblock %}

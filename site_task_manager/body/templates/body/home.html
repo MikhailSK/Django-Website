@@ -1,0 +1,67 @@
+{% extends 'body/base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block navbar %}
+    <li class="nav-item active">
+        <a class="nav-link" href="http://127.0.0.1:8000/home/">Home<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:8000/tasks">Tasks</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:8000/settings">Settings</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div align="center">
+        <h2>{{ header }}</h2>
+        <p>{{ message }}</p>
+        <table>
+            <tr>
+                <td>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dark card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's
+                                content.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-success">Footer</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dark card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's
+                                content.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-success">Footer</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Dark card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's
+                                content.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-success">Footer</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
