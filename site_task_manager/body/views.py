@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Question
 
@@ -24,7 +24,6 @@ def main_page(request):
         'message': output,
     }
     print(latest_question_list)
-    # return render(request, "body/main_page.html", data)
     return HttpResponse(template.render(context, request))
 
 
@@ -49,13 +48,14 @@ def settings(request):
 
 
 def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'body/detail.html', {'question': question})
+
 
 def results(request, question_id):
     response = "You're looking at the results of question %s."
     return HttpResponse(response % question_id)
 
+
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
-
-

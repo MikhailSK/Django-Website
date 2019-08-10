@@ -1,0 +1,23 @@
+{% extends 'body/base.html' %}
+
+{% block title %}
+    Welcome to Task Manager
+{% endblock %}
+
+{% block content %}
+    <div align="center">
+        <h1>Qestion</h1>
+    	<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+	        <div class="card-body">
+                <h5 class="card-title">Qestion</h5>
+                <p class="card-text">{{ question }}</p>
+                <h1>{{ question.question_text }}</h1>
+                <ul>
+                    {% for choice in question.choice_set.all %}
+                        <li>{{ choice.choice_text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

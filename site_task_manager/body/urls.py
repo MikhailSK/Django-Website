@@ -11,7 +11,7 @@ urlpatterns = [
     path('sing_up/', views.sing_up),
     path('tasks/', views.tasks),
     path('settings/', views.settings),
-    path('<int:question_id>/', views.detail, name='detail'),
+    path('qestions/<int:question_id>/', views.detail, name='detail'),
     path('<int:question_id>/results/', views.results, name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
